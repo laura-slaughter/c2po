@@ -3,7 +3,14 @@ This is a discussion of patient state for C2PO.
 
 = Introduction =
 
-What classes to add??
+
+
+= Related Work =
+
+W3C Healthcare and Life Sciences Interest Group has a working group that is working on interoperability of clinical observations. (patient data): [[http://www.w3.org/wiki/HCLS/ClinicalObservationsInteroperability]]
+ 
+
+
 
 = Details =
 
