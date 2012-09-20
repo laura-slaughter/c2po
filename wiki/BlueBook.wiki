@@ -1,5 +1,11 @@
 #summary This document contains summaries of the work done on C2PO.
 
+* 20 Sept 2012 *
+New version!
+
+
+
+= Notes below this point reflect initial efforts =
 
 * 7. october 2011 *
 - initial discussion and answering of proposals from Mathias on communication process roles)
