@@ -1,13 +1,200 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-This is the blue book for C2PO
+#summary This document contains summaries of the work done on C2PO.
 
 
-= Details =
+* 7. october 2011 *
+- initial discussion and answering of proposals from Mathias on communication process roles)
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Attempt to get down to basics on VTE/Lower extremities/bleeding as a case:
+Two Uptodate sources we used for "bottom-up analysis" of guideline contents:
+1. http://www.uptodate.com/contents/treatment-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=2%7E150#H42 and
+2. http://www.uptodate.com/contents/approach-to-the-diagnosis-and-therapy-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=1%7E150#H30
+3. AT9 (ACCT)
+
+We are now working from the bottom-up with guideline content. The first thing to do is to see what information a recommendation contains. For example, “When unfractionated heparin is used, we recommend that the dose should be sufficient to prolong the aPTT to a range that corresponds to a plasma heparin level of 0.3 to 0.7 U/mL by an anti-Xa assay (Grade 1B). (See 'Unfractionated heparin' above.)”
+
+medication + dosage of medication
+lab tests (aPPT, anti-Xa assay)
+
+
+* 6 October 2011 *
+(Discussion around information content entities in IAO)
+Order set: Set information perhaps goes into the information model? (Set of orders) Define what an order is- an order set is a set of ontology recommendations???
+
+
+Context notes: These guidelines are process descriptions, statements with propositional content. Content plays roles that are given by the context of use. 
+
+
+Maybe context is “mode of language” or “mode of speech”; it is not about environment. 
+
+
+context = situation- bind actors to their roles, instance; in this case, context is not a role itself, but it is (organising and/or coordinating the activities and events?)...
+
+
+What is the context?- The setting in which a content entity is presented to fulfill and information need? 
+
+
+A guideline is used in various situations, but it is always sitting there as a guideline. That guideline is a type of thing and what is that? (is a GL used i “various” situations, or can we define at least the most common of them?)
+
+
+We keep coming back to intentions- you don´t communicate without intention. 
+
+
+The functionality is combined with information content entity. Declarative, imperative, …
+
+
+We have come to one conclusion- each content entity is seen by people differently. Example, a pen is a pen to a human, but to a dog a pen is a chew toy. We have added role to the content entity by saying something is declarative, or directive (maybe we should have said “imperative”), question, exclamation. With information content, the content can be seen with different “eyes” just like the dog and human. We should to separate the role/situation of the receiver and the intention of the speaker/producer with the actual content itself if we want to make the ontology “reusable”. Otherwise we end up designing different ontologies for the same guideline depending on the usage/use. What is the relationship between the washing of hands and “wash hands”..., is the C2PO at all dealing with washing of hands, or just the statements “wash hands”. If it is about “wash hands”, we are trying to design the ontology that adheres to the GL-authors view. Exclusively.
+
+
+9.-18. Sept
+
+
+We also added patient population (sociological) to object aggregate. This was because we looked at recommendations and they are of the form “some patient population having x condition we recommend having treatment y”. 
+
+
+MB & LS: So, a communication context is not like an environmental context. The definition we have for that is: "An information entity consisting of assumptions and premises underlying an informing process to unify information content entities according to the creator's intention."
+
+
+BS- These sound like qualities of the individual creator, rather than generically dependent entities
+
+
+MB & LS Its, so far, only subclass is "guideline context defined as follows: "An information context entity that is a collection of recommendations and other information content entities created for the purpose of assisting in achieving an objective. "
+
+
+BS: Sounds like a collection -- not like a context. Or rather: it is a collection that plays the ROLE of a context
+
+
+-- MB& LS reply: 
+setting aside the collection issue just for the moment. Has some ontology already represented context as a role (it sounds familiar to me). So context roles can be borne by information content entities, right? However, how would a role like that be realized?
+
+
+Now for the collection issue: I think we agree that collections shouldn't go into a domain ontology, but shouldn't we be able to represent them as attributive collections in a application ontology? If so, can you suggest how that could be done? Furthermore, we know that pointing towards weird things other people do is not an excuse, but "document' in IAO is a collection, too. The definition reads: "A collection of information content entities intended to be understood together as a whole." What do you think of their definition?
+
+
+	
+
+
+
+
+
+MB & LS: Information contexts besides guideline context could be "semiotic context" (a pattern in the sand created by wind and looking like an ankh is not an ankh ( is is not a symbol), a fiction context (the sentence "you must go to Rome and kill the Pope" in a novel is a directive information content entity, but it is not in a context where it orders you to follow that directive). Altogether, we think that IAO does not do a good job representing different types of information entities that by just throwing everything in one place ( e.g. making document and textual entity siblings).
+
+
+BS: A novel is an information content entity that includes information content entities as parts (e.g. the sentence you mention). In this way, it playsthe ROLE of context for this sentence. But contexts (of this sort) are not extra entities, they are just collections.
+
+
+We already looked at programming language and we both agreed the definition is lacking: "A language in which source code is written, intended to executed/run by a software interpreter. Programming languages are ways to write instructions that specify what to do, and sometimes, how to do it." The problem is that IAO does not define what a language is.
+
+
+BS: This is a genuine gap -- you want to try to fill it?
+
+
+Programming language is subtype of plan specification which is subtyp of directive information content. We think that these taxonomical assumptions are already debatable for programming language. They certainly are wrong for language in general, since languages do not only contain directive bits, they also contain the lexicon which is basically the information expression format. The definition we added for the latter is: "An information entity that specifies the way in which information content is expressed." Subtypes of this could be language (written or spoken), figures, tables etc.
+
+
+We know that this is doing a bit more defining work on classes which some OBO Foundry ontologies are a bit careful to do to avoid unwanted ontological commitment. However, in the case of IAO we think the present situation really makes it hard, if not impossible to use.
+
+
+
+
+
+
+5. Sept
+These figures show the upper level of the IAO and suggestions for changes to the information entities for C2PO. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Barry´s reaction to these two figures:
+
+
+ it seems that you are keeping the basic structure of IAO but are
+adding two new terms:
+
+
+information context
+information expression format
+
+
+which force you to add a new binning term 'information entity'
+
+
+But are these terms really referring to generically dependent continuants?
+An information context might be, for instance, something like 'context
+of ABC hospital'; this sounds to me rather specifically dependent on
+ABC hospital
+Similarly an information expression format might be, for instance:  the English language.
+IAO has 'programming language' -- perhaps you should take that as your
+starting point, here, and see what you get
+	
+
+
+
+29. November 2011
+
+
+The ontology is available on google project hosting. 
+http://code.google.com/p/c2po/
+
+
+What has been added: (from an email)
+This is the start of gathering and creating classes for the "patientstate (PS)" info in recommendations. PS is what we say when we refer to the types of patients in the recommendation statement (usually takes the form IF PS=x,y,z, THEN do some treatment)
+
+
+So, for example, in this recommendation "In patients with acute DVT of the leg treated with VKA therapy, we recommend initial treatment with parenteral anticoagulation (LMWH, fondaparinux, IV UFH, or SC UFH) rather than no such initial treatment (Grade 1B).", the PS is "patients with acute DVT of the leg treated with VKA therapy". 
+
+
+The x,y,z PS that is interesting for us is: (patient,acute,DVT,leg,treated with VKA therapy)
+
+
+What we added to C2PO so far are just classes from two other ontologies: OGMS and FMA. These classes include:
+disease course and subclasses e.g. acute disease course, chronic disease course, manifestation of a disease, cardinal body part and subclasses e.g. lower limb, treatment, diagnostic process, and symptom. (OGMS is still a work in progress. I took symptom from it, for example, but didn't know where to place it (eventually stuck it under the class "quality" and that was just a wild guess about what to do with it. )
+
+
+
+
+Mathias has made several suggestions that were implemented in version 1.5.2:
+Imported obj properties from OBI:
+http://purl.obolibrary.org/obo/OBI_0000294 is_concretization_of
+http://purl.obolibrary.org/obo/OBI_0000308 realizes
+
+
++ added necessary &sufficient constraint to planned process
+realizes some (is_concretization_of some
+('plan specification' and (has_part some 'objective specification'))) [same as OBI]
+
+
+
+
+…..........
+if “procedure” is an attributive collection we need to give necessary and sufficient conditions.
+
+
+“guideline context” We have to re-think this in the light of Barry’s answer (at least, if we feel it is important now, otherwise we might turn it into obsolete).
+
+
+You have female and male body twice. Once it says female human body and is a subclass to “Homo sapiens” which I find a bit problematic, and the other time it says female body proper and stems from FMA which makes it a human body, since the FMA only represents human anatomy.
+That is probably just a mistake, but Human Body should not be a sibling to Female Human Body and Male Human Body.
+
+
+We should have “has part some human being” as a necessary condition for population (sociological).
+
+
+We need to work on procedural process. Maybe we could arrange a half day skype meeting after thanksgiving and discuss this.
