@@ -6,8 +6,8 @@
 
 Attempt to get down to basics on VTE/Lower extremities/bleeding as a case:
 Two Uptodate sources we used for "bottom-up analysis" of guideline contents:
-1. http://www.uptodate.com/contents/treatment-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=2%7E150#H42 and
-2. http://www.uptodate.com/contents/approach-to-the-diagnosis-and-therapy-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=1%7E150#H30
+1. [http://www.uptodate.com/contents/treatment-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=2%7E150#H42] and
+2. [http://www.uptodate.com/contents/approach-to-the-diagnosis-and-therapy-of-lower-extremity-deep-vein-thrombosis?source=search_result&search=dvt&selectedTitle=1%7E150#H30]
 3. AT9 (ACCT)
 
 We are now working from the bottom-up with guideline content. The first thing to do is to see what information a recommendation contains. For example, “When unfractionated heparin is used, we recommend that the dose should be sufficient to prolong the aPTT to a range that corresponds to a plasma heparin level of 0.3 to 0.7 U/mL by an anti-Xa assay (Grade 1B). (See 'Unfractionated heparin' above.)”
