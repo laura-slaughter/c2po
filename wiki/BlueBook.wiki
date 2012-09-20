@@ -45,7 +45,7 @@ The functionality is combined with information content entity. Declarative, impe
 We have come to one conclusion- each content entity is seen by people differently. Example, a pen is a pen to a human, but to a dog a pen is a chew toy. We have added role to the content entity by saying something is declarative, or directive (maybe we should have said “imperative”), question, exclamation. With information content, the content can be seen with different “eyes” just like the dog and human. We should to separate the role/situation of the receiver and the intention of the speaker/producer with the actual content itself if we want to make the ontology “reusable”. Otherwise we end up designing different ontologies for the same guideline depending on the usage/use. What is the relationship between the washing of hands and “wash hands”..., is the C2PO at all dealing with washing of hands, or just the statements “wash hands”. If it is about “wash hands”, we are trying to design the ontology that adheres to the GL-authors view. Exclusively.
 
 
-9.-18. Sept
+* 9.-18. Sept 2011 *
 
 
 We also added patient population (sociological) to object aggregate. This was because we looked at recommendations and they are of the form “some patient population having x condition we recommend having treatment y”. 
@@ -70,12 +70,6 @@ setting aside the collection issue just for the moment. Has some ontology alread
 Now for the collection issue: I think we agree that collections shouldn't go into a domain ontology, but shouldn't we be able to represent them as attributive collections in a application ontology? If so, can you suggest how that could be done? Furthermore, we know that pointing towards weird things other people do is not an excuse, but "document' in IAO is a collection, too. The definition reads: "A collection of information content entities intended to be understood together as a whole." What do you think of their definition?
 
 
-	
-
-
-
-
-
 MB & LS: Information contexts besides guideline context could be "semiotic context" (a pattern in the sand created by wind and looking like an ankh is not an ankh ( is is not a symbol), a fiction context (the sentence "you must go to Rome and kill the Pope" in a novel is a directive information content entity, but it is not in a context where it orders you to follow that directive). Altogether, we think that IAO does not do a good job representing different types of information entities that by just throwing everything in one place ( e.g. making document and textual entity siblings).
 
 
@@ -94,11 +88,7 @@ Programming language is subtype of plan specification which is subtyp of directi
 We know that this is doing a bit more defining work on classes which some OBO Foundry ontologies are a bit careful to do to avoid unwanted ontological commitment. However, in the case of IAO we think the present situation really makes it hard, if not impossible to use.
 
 
-
-
-
-
-5. Sept
+* 5. Sept 2011 *
 These figures show the upper level of the IAO and suggestions for changes to the information entities for C2PO. 
 
 
@@ -147,7 +137,7 @@ starting point, here, and see what you get
 
 
 
-29. November 2011
+* 29. November 2011 * 
 
 
 The ontology is available on google project hosting. 
