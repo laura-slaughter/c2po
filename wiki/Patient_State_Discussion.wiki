@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary More focused discussion on patient state representation in C2PO
 This is a discussion of patient state for C2PO.
 
 = Introduction =
