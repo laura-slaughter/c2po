@@ -2,8 +2,61 @@
 
 = Blue Book = 
 
-* 20 Sept 2012 *
+* 25 Sept 2012 *
 New version!
+
+imported entire d-acts ontology and added the following:
+
+From PATO:
+biological sex (http://purl.obolibrary.org/obo/PATO_0000047)
+and the subclasses of biological sex:
+female (http://purl.obolibrary.org/obo/PATO_0000383)
+hermaphrodite (http://purl.obolibrary.org/obo/PATO_0001340)
+male (http://purl.obolibrary.org/obo/PATO_0000384)
+
+age (http://purl.obolibrary.org/obo/PATO_0000011)
+
+From OMRSE:
+gender role (http://purl.obolibrary.org/obo/OMRSE_00000007)
+and the subclasses of gender role:
+female gender role (http://purl.obolibrary.org/obo/OMRSE_00000009)
+male gender role (http://purl.obolibrary.org/obo/OMRSE_00000008)
+
+From OGMS:
+injury (http://purl.obolibrary.org/obo/OGMS_0000102)
+pathological anatomical structure (http://purl.obolibrary.org/obo/OGMS_0000078)
+pathological formation (http://purl.obolibrary.org/obo/OGMS_0000077)
+portion of pathological body structure (http://purl.obolibrary.org/obo/OGMS_0000079)
+disease course (http://purl.obolibrary.org/obo/OGMS_0000063)
+disorder (http://purl.obolibrary.org/obo/OGMS_0000045)
+congenital malformation (http://purl.obolibrary.org/obo/OGMS_0000089)
+treatment (http://purl.obolibrary.org/obo/OGMS_0000090)
+
+From OBI:
+drug role (http://purl.obolibrary.org/obo/OBI_0000040)
+
+From ACGT: 
+pharmacotherapy (http://www.ifomis.org/acgt/1.0#Pharmacotherapy)
+with the axiom added …so everything that is a material entity w/drug role is a treatment
+treatment and (has_participant some (material_entity and (bearer_of some drug role)))
+
+Added a class for medical condition, a set of things, and not a type
+Definition: Medical conditions are entities that are injuries, pathological anatomical structures, pathological formations, pathological body substances, congenital malformations, disease courses, or disorders.
+Axiom added, necessary and sufficient conditions (equivalent classes= defined):
+disorder or disease course or pathological formation or pathological anatomical structure or portion of pathological body substance or congenital malformation or injury
+
+Added the classes:
+recommending
+Definition: A (planned) process that is a social act that puts forward, with approval, a description of actions to take that are suitable for a particular purpose.
+recommendation
+Definition: working on it in relation to d-acts
+With axiom (necessary and sufficient conditions):
+generally_dependent_continuant and (is_specified_output_of only recommending)
+
+recommended directive information content entity 
+Definition: working on it in relation to d-acts
+With axiom (necessary and sufficient conditions):
+directive information entity and (has_part some recommendation)
 
 
 
