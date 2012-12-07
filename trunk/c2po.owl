@@ -475,9 +475,9 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&span;ProcessualEntity"/>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0000011"/>
         <obo:IAO_0000117>Laura Slaughter</obo:IAO_0000117>
-        <obo:IAO_0000115 xml:lang="en">A (planned) process that is a social act that puts forward, with approval, a description of actions to take that are suitable for a particular purpose.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that is a social act that puts forward, with approval, a description of actions to take that are suitable for a particular purpose.</obo:IAO_0000115>
         <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
     </owl:Class>
     
