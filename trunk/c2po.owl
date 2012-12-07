@@ -510,6 +510,7 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
     <owl:Class rdf:about="&c2po;c2po_00000003">
         <rdfs:label xml:lang="en">clinical guideline</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;IAO_0000310"/>
+        <obo:IAO_0000115 xml:lang="en">A document that includes recommendations intended to optimize patient care.</obo:IAO_0000115>
     </owl:Class>
     
 
