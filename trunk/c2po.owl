@@ -545,6 +545,19 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
         <rdfs:subClassOf rdf:resource="&c2po;c2po_00000002"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&c2po;c2po_00000008"/>
+                            <rdf:Description rdf:about="&c2po;c2po_00000009"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;OBI_0000312"/>
                 <owl:allValuesFrom>
                     <owl:Class>
@@ -611,6 +624,37 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&c2po;c2po_00000005"/>
         <obo:IAO_0000115 xml:lang="en">A clinical guideline content recommendation that mentions pharmacotherapy.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000008 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000008">
+        <rdfs:label xml:lang="en">patient state data item</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000027"/>
+        <obo:IAO_0000115 xml:lang="en">A data item that is about patient demographics, patient problems, and relevant situations.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000009 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000009">
+        <rdfs:label xml:lang="en">intervention specification</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0000007"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&c2po;c2po_00000005"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A action specification that is part of a clinical guideline content recommendation and is realized by process that are part of a healthcare workflow and are carried out by bearers of healthcare provider roles.</obo:IAO_0000115>
     </owl:Class>
 </rdf:RDF>
 
