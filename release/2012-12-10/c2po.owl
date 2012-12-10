@@ -14,6 +14,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY c2po "https://c2po.googlecode.com/svn/c2po.owl/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
 ]>
 
 
@@ -24,15 +25,17 @@
      xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
      xmlns:c2po="https://c2po.googlecode.com/svn/c2po.owl/"
      xmlns:bfo="http://www.ifomis.org/bfo/1.1#"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:OBO_REL="http://purl.org/obo/owl/OBO_REL#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:span="http://www.ifomis.org/bfo/1.1/span#">
     <owl:Ontology rdf:about="https://c2po.googlecode.com/svn/c2po.owl">
         <owl:imports rdf:resource="http://purl.obofoundry.org/obo/iao/d-acts.owl"/>
+        <owl:imports rdf:resource="&obo;omrse.owl"/>
     </owl:Ontology>
     
 
@@ -53,19 +56,19 @@
         <rdfs:label>editor note</rdfs:label>
         <rdfs:label xml:lang="en">editor note</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&obo;IAO_0000412">
-        <rdfs:label xml:lang="en">imported from</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&obo;IAO_0000114">
         <rdfs:label xml:lang="en">has curation status</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&obo;IAO_0000119">
-        <rdfs:label>definition source</rdfs:label>
-        <rdfs:label xml:lang="en">definition source</rdfs:label>
+    <rdf:Description rdf:about="&obo;IAO_0000412">
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&obo;IAO_0000232">
         <rdfs:label>curator note</rdfs:label>
         <rdfs:label xml:lang="en">curator note</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&obo;IAO_0000119">
+        <rdfs:label>definition source</rdfs:label>
+        <rdfs:label xml:lang="en">definition source</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&obo;IAO_0000117">
         <rdfs:label>definition editor</rdfs:label>
@@ -413,6 +416,7 @@ The definition states that all pp are realizing plans which are concretizations 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&obo;OGMS_0000090"/>
+        <obo:IAO_0000115 xml:lang="en">A treatment involving the administration of a drug.</obo:IAO_0000115>
         <rdfs:comment xml:lang="en">imported from ACGT</rdfs:comment>
     </owl:Class>
     
@@ -450,9 +454,31 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
 
     <owl:Class rdf:about="&c2po;c2po_00000001">
         <rdfs:label xml:lang="en">recommending</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&span;ProcessualEntity"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&span;ProcessualEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_agent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                                    <rdf:Description rdf:about="&obo;OBI_0000245"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;OBI_0000299"/>
+                        <owl:allValuesFrom rdf:resource="&c2po;c2po_00000002"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;OBI_0000011"/>
         <obo:IAO_0000117>Laura Slaughter</obo:IAO_0000117>
-        <obo:IAO_0000115 xml:lang="en">A (planned) process that is a social act that puts forward, with approval, a description of actions to take that are suitable for a particular purpose.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A planned process that is a social act that puts forward, with approval, a description of actions to take that are suitable for a particular purpose.</obo:IAO_0000115>
         <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
     </owl:Class>
     
@@ -465,7 +491,7 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&snap;GenericallyDependentContinuant"/>
+                    <rdf:Description rdf:about="&obo;IAO_0000033"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;OBI_0000312"/>
                         <owl:allValuesFrom rdf:resource="&c2po;c2po_00000001"/>
@@ -473,9 +499,19 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&snap;GenericallyDependentContinuant"/>
-        <obo:IAO_0000115 xml:lang="en">working on it in relation to d-acts
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000033"/>
+        <obo:IAO_0000115 xml:lang="en">A directive information content entity that is the specified output of a recommending process and the concretization of which tells its bearer the course of action deemed best to achieve a specific goal by the participants of the recommending process.
 </obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000003 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000003">
+        <rdfs:label xml:lang="en">clinical guideline</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000310"/>
+        <obo:IAO_0000115 xml:lang="en">A document that includes recommendations intended to optimize patient care.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -483,20 +519,143 @@ Discussion from wikipedia source concerning medical conditions. http://en.wikipe
     <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000004 -->
 
     <owl:Class rdf:about="&c2po;c2po_00000004">
-        <rdfs:label xml:lang="en">recommended directive information content entity</rdfs:label>
+        <rdfs:label xml:lang="en">obsolete_recommended directive information content entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&oboInOwl;ObsoleteClass"/>
+        <obo:IAO_0000117>Mathias Brochhausen</obo:IAO_0000117>
+        <obo:IAO_0000115 xml:lang="en">coming soon... related to d-acts</obo:IAO_0000115>
+        <obo:IAO_0000231 rdf:resource="&obo;IAO_0000103"/>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000005 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000005">
+        <rdfs:label xml:lang="en">clinical guideline content recommendation</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;IAO_0000033"/>
+                    <rdf:Description rdf:about="&c2po;c2po_00000002"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom rdf:resource="&c2po;c2po_00000002"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&c2po;c2po_00000003"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&obo;IAO_0000033"/>
-        <obo:IAO_0000115 xml:lang="en">coming soon... related to d-acts</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="&c2po;c2po_00000002"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&c2po;c2po_00000008"/>
+                            <rdf:Description rdf:about="&c2po;c2po_00000009"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;OBI_0000312"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&c2po;c2po_00000001"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_participant"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;NCBITaxon_9606"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&OBO_REL;bearer_of"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;OMRSE_00000012"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;OBI_0000245"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&OBO_REL;bearer_of"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:unionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;OMRSE_00000012"/>
+                                                                    <rdf:Description rdf:about="&obo;OMRSE_00000027"/>
+                                                                </owl:unionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A recommendation that is part of a clinical guideline. </obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000006 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000006">
+        <rdfs:label xml:lang="en">clinical guideline content recomendations mentioning pharmacotherapy</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&c2po;c2po_00000005"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;IAO_0000142"/>
+                        <owl:someValuesFrom rdf:resource="&acgt;Pharmacotherapy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&c2po;c2po_00000005"/>
+        <obo:IAO_0000115 xml:lang="en">A clinical guideline content recommendation that mentions pharmacotherapy.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000008 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000008">
+        <rdfs:label xml:lang="en">patient state data item</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000027"/>
+        <obo:IAO_0000115 xml:lang="en">A data item that is about patient demographics, patient problems, and relevant situations.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- https://c2po.googlecode.com/svn/c2po.owl/c2po_00000009 -->
+
+    <owl:Class rdf:about="&c2po;c2po_00000009">
+        <rdfs:label xml:lang="en">intervention specification</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;IAO_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;IAO_0000007"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&c2po;c2po_00000005"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 xml:lang="en">A action specification that is part of a clinical guideline content recommendation and is realized by process that are part of a healthcare workflow and are carried out by bearers of healthcare provider roles.</obo:IAO_0000115>
     </owl:Class>
 </rdf:RDF>
 

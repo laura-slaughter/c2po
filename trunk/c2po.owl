@@ -416,6 +416,7 @@ The definition states that all pp are realizing plans which are concretizations 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&obo;OGMS_0000090"/>
+        <obo:IAO_0000115 xml:lang="en">A treatment involving the administration of a drug.</obo:IAO_0000115>
         <rdfs:comment xml:lang="en">imported from ACGT</rdfs:comment>
     </owl:Class>
     
