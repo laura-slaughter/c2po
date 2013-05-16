@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY acgt "http://www.ifomis.org/acgt/1.0#" >
+    <!ENTITY OBO_REL "http://purl.org/obo/owl/OBO_REL#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
+    <!ENTITY ro "http://www.obofoundry.org/ro/ro.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY c2po "https://c2po.googlecode.com/svn/c2po.owl/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY c2po-individuals "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/" >
+    <!ENTITY unprovoked2 "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/first_idiopathic_(unprovoked)" >
+    <!ENTITY unprovoked "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/first_episode_of_idiopathic_(unprovoked)" >
+    <!ENTITY _distal "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/unprovoked_symptomatic_isolated_calf_vein_(ie,_distal)" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl"
+     xmlns:_distal="&c2po-individuals;unprovoked_symptomatic_isolated_calf_vein_(ie,_distal)"
+     xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
+     xmlns:acgt="http://www.ifomis.org/acgt/1.0#"
+     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+     xmlns:c2po="https://c2po.googlecode.com/svn/c2po.owl/"
+     xmlns:unprovoked2="&c2po-individuals;first_idiopathic_(unprovoked)"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:unprovoked="&c2po-individuals;first_episode_of_idiopathic_(unprovoked)"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:OBO_REL="http://purl.org/obo/owl/OBO_REL#"
+     xmlns:c2po-individuals="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl">
+        <owl:imports rdf:resource="https://c2po.googlecode.com/svn/c2po.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&c2po-individuals;has_textual_string">
+        <rdfs:label rdf:datatype="&xsd;string">has_string_value</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/anticoagulant -->
+
+    <owl:NamedIndividual rdf:about="&c2po-individuals;anticoagulant">
+        <rdf:type rdf:resource="&snap;MaterialEntity"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&OBO_REL;bearer_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;OBI_0000040"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">anticoagulant</rdfs:label>
+        <rdfs:comment>http://live.dbpedia.org/page/Anticoagulant</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/anticoagulation_therapy -->
+
+    <owl:NamedIndividual rdf:about="&c2po-individuals;anticoagulation_therapy">
+        <rdf:type rdf:resource="&acgt;Pharmacotherapy"/>
+        <rdfs:label xml:lang="en">anticoagulation therapy</rdfs:label>
+        <ro:has_participant rdf:resource="&c2po-individuals;anticoagulant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/first_episode_of_idiopathic_(unprovoked)_VTE -->
+
+    <c2po:c2po_00000006 rdf:about="&c2po-individuals;first_episode_of_idiopathic_(unprovoked)_VTE">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">first episode of idiopathic (unprovoked) VTE</rdfs:label>
+        <c2po-individuals:has_textual_string rdf:datatype="&xsd;string">For a patient with a first episode of idiopathic (unprovoked) VTE, we recommend anticoagulation for a minimum of three months (Grade 1A). Following this time, and periodically thereafter, all patients should be evaluated for the risk/benefit ratio of long-term anticoagulation.</c2po-individuals:has_textual_string>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;anticoagulation_therapy"/>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;venous_thromboembolis"/>
+    </c2po:c2po_00000006>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/first_idiopathic_(unprovoked)_VTE_that_is_proximal_in_location -->
+
+    <c2po:c2po_00000006 rdf:about="&c2po-individuals;first_idiopathic_(unprovoked)_VTE_that_is_proximal_in_location">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">first idiopathic (unprovoked) VTE that is proximal in location</rdfs:label>
+        <c2po-individuals:has_textual_string rdf:datatype="&xsd;string">For patients with a first idiopathic (unprovoked) VTE that is proximal in location, we suggest indefinite treatment (eg, &gt;12 months) over treatment for a lesser period of time (Grade 2A).</c2po-individuals:has_textual_string>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;anticoagulation_therapy"/>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;venous_thromboembolis"/>
+    </c2po:c2po_00000006>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/patients_with_a_first_thromboembolic_event -->
+
+    <c2po:c2po_00000006 rdf:about="&c2po-individuals;patients_with_a_first_thromboembolic_event">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">patients with a first thromboembolic event</rdfs:label>
+        <c2po-individuals:has_textual_string rdf:datatype="&xsd;string">We recommend that patients with a first thromboembolic event in the context of a reversible or time-limited risk factor (eg, surgery, trauma, pregnancy, use of oral contraceptives) should be treated for a minimum of three months, rather than for a shorter period of time (Grade 1A). Longer-term therapy (ie, longer than 6 months) is not necessary, since the risk of recurrence in such patients is low, being ≤4 percent in the first year.</c2po-individuals:has_textual_string>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;anticoagulation_therapy"/>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;venous_thromboembolis"/>
+    </c2po:c2po_00000006>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/second_episode_of_unprovoked_VTE -->
+
+    <c2po:c2po_00000006 rdf:about="&c2po-individuals;second_episode_of_unprovoked_VTE">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">second episode of unprovoked VTE</rdfs:label>
+        <c2po-individuals:has_textual_string rdf:datatype="&xsd;string">For patients with a second episode of unprovoked VTE and for those with the antiphospholipid syndrome and VTE, we recommend indefinite anticoagulation (Grade 1A).</c2po-individuals:has_textual_string>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;anticoagulation_therapy"/>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;venous_thromboembolis"/>
+    </c2po:c2po_00000006>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/unprovoked_symptomatic_isolated_calf_vein_(ie,_distal)_thrombosis -->
+
+    <c2po:c2po_00000006 rdf:about="&c2po-individuals;unprovoked_symptomatic_isolated_calf_vein_(ie,_distal)_thrombosis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="en">unprovoked symptomatic isolated calf vein (ie, distal) thrombosis</rdfs:label>
+        <c2po-individuals:has_textual_string rdf:datatype="&xsd;string">For patients with unprovoked symptomatic isolated calf vein (ie, distal) thrombosis, we suggest that anticoagulation for 3 months is sufficient, rather than indefinite therapy (Grade 2B).</c2po-individuals:has_textual_string>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;anticoagulation_therapy"/>
+        <obo:IAO_0000136 rdf:resource="&c2po-individuals;venous_thromboembolis"/>
+    </c2po:c2po_00000006>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/venous_thromboembolis -->
+
+    <owl:NamedIndividual rdf:about="&c2po-individuals;venous_thromboembolis">
+        <rdf:type rdf:resource="&obo;OGMS_0000063"/>
+        <rdfs:label xml:lang="en">venous thromboembolis</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A venous thrombosis or phlebothrombosis is a blood clot (thrombus) that forms within a vein. Thrombosis is a term for a blood clot occurring inside a blood vessel. A classical venous thrombosis is deep vein thrombosis (DVT), which can break off (embolize), and become a life-threatening pulmonary embolism (PE). The disease process venous thromboembolism (abbreviated as VTE or DVT/PE) can refer to DVT and/or PE.
+Source: Wikipedia http://en.wikipedia.org/wiki/Venous_thrombosis</obo:IAO_0000115>
+        <rdfs:comment xml:lang="en">same as
+http://dbpedia.org/page/Venous_thrombosis
+
+</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
