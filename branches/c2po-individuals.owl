@@ -10,7 +10,7 @@
     <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
     <!ENTITY ro "http://www.obofoundry.org/ro/ro.owl#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY c2po "https://c2po.googlecode.com/svn/c2po.owl/" >
+    <!ENTITY c2po "http://c2po.googlecode.com/svn/trunk/c2po.owl" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY c2po-individuals "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/" >
     <!ENTITY unprovoked2 "http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/first_idiopathic_(unprovoked)" >
@@ -25,7 +25,7 @@
      xmlns:ro="http://www.obofoundry.org/ro/ro.owl#"
      xmlns:acgt="http://www.ifomis.org/acgt/1.0#"
      xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
-     xmlns:c2po="https://c2po.googlecode.com/svn/c2po.owl/"
+     xmlns:c2po="http://c2po.googlecode.com/svn/trunk/c2po.owl"
      xmlns:unprovoked2="&c2po-individuals;first_idiopathic_(unprovoked)"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
@@ -36,7 +36,7 @@
      xmlns:OBO_REL="http://purl.org/obo/owl/OBO_REL#"
      xmlns:c2po-individuals="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2013/4/c2po-individuals.owl">
-        <owl:imports rdf:resource="https://c2po.googlecode.com/svn/c2po.owl"/>
+        <owl:imports rdf:resource="http://c2po.googlecode.com/svn/trunk/c2po.owl"/>
     </owl:Ontology>
     
 
