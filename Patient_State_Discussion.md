@@ -1,0 +1,21 @@
+This is a discussion of patient state for C2PO.
+
+# Introduction #
+
+
+
+# Related Work #
+
+W3C Healthcare and Life Sciences Interest Group has a working group that is working on interoperability of clinical observations. (patient data): http://www.w3.org/wiki/HCLS/ClinicalObservationsInteroperability
+
+CDISC's Study Data Tabulation Model (SDTM), an emerging standard for regulatory reporting of clinical research data, defines the study variables for a given clinical trial in terms of domains and observations.
+
+The Institute of Medicine has 8 standards for evidence based clinical guidelines: http://www.iom.edu/Reports/2011/Clinical-Practice-Guidelines-We-Can-Trust/Standards.aspx
+
+
+# Details #
+
+Add your content here.  Format your content with:
+  * Text in **bold** or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages

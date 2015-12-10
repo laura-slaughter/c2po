@@ -1,0 +1,1 @@
+A realist representation of clinical protocols including recommendations and content of clinical guidelines.
